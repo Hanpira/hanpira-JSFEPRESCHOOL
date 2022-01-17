@@ -437,3 +437,71 @@ textarea:hover {
     font-size: 20px;
     padding-left: 20px;
 }
+
+/* Footer */
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.footer-container a {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.footer-container a:hover {
+    color: #bdae82;
+}
+
+.footer-desc {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-nav-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    list-style: none;
+}
+
+.social-item {
+    background-position: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: 0.3s;
+    width: 50px;
+    height: 50px;
+}
+
+.social-item-insta {
+    background-image: url('./assets/svg/instagram.svg');
+}
+
+.social-item-fb {
+    background-image: url('./assets/svg/fb.svg');
+}
+
+.social-item-tw {
+    background-image: url('./assets/svg/tw.svg');
+}
+
+.social-item-pin {
+    background-image: url('./assets/svg/pinterest.svg');
+}
+
+.social-item:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
