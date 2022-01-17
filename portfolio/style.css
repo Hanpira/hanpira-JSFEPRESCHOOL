@@ -145,3 +145,41 @@ button {
 .active {
     color: #bdae82;
 }
+
+/* Main */
+
+/* Hero */
+
+.hero {
+    background-image: url('./assets/img/hero-photo.jpg');
+    background-position: center -90px;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 820px;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 580px;
+    padding-left: 80px;
+    padding-top: 130px;
+}
+
+.hero-title {
+    font-family: "Merriweather";
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.hero-text {
+    width: 470px;
+    height: 120px;
+    line-height: 2;
+}
+
+.hero-btn{
+    margin-top: 25px;
+}
