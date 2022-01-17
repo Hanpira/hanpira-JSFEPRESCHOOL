@@ -293,3 +293,32 @@ button {
     margin: 0 auto;
     padding-top: 10px;
 }
+
+/* Video */
+
+.video-container {
+    background-image: url(./assets/img/wedding-day.jpg);
+    background-position: center 0;
+    background-repeat: no-repeat;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.video-btn {
+    background: transparent;
+    background-image: url('./assets/svg/play-hover.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: absolute;
+    overflow: visible;
+    width: 130px;
+    height: 130px;
+}
+
+.video-btn:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
