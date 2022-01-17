@@ -261,3 +261,35 @@ button {
 .skill-item-audio:nth-child(4) {
     background-image: url('./assets/svg/mic.svg');
 }
+
+/* Portfolio */
+
+.portfolio-btns {
+    display: flex;
+    padding: 60px;
+    gap: 5px;
+}
+
+.period-btn {
+    border: solid 2px #bdae82;
+    color: #bdae82;
+    background-color: #000;
+}
+
+.period-btn:hover {
+    color: #fff;
+}
+
+.active-btn {
+    color: #000;
+    background-color: #bdae82;
+}
+
+.portfolio-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin: 0 auto;
+    padding-top: 10px;
+}
