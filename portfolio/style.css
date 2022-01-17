@@ -1,0 +1,51 @@
+html {
+    scroll-behavior: smooth;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url("./assets/fonts/Inter-Regular.ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url("./assets/fonts/Inter-Bold.ttf");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url("./assets/fonts/Merriweather-Regular.ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url("./assets/fonts/Merriweather-Bold.ttf");
+    font-weight: 700;
+}
+
+@media (max-width: 1440px) {
+    .section {
+        width: 100%;
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #fff;
+    background-color: #000;
+    margin: 0 auto;
+    padding: 0;
+}
