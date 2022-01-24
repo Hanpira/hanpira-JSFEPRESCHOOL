@@ -276,6 +276,8 @@ button {
     .nav-active {
         transition: 0.3s all linear;
         right: 75%;
+        overflow: visible;
+        display: flex;
     }
 
     .nav-list {
@@ -284,7 +286,7 @@ button {
         justify-content: center;
         align-items: flex-start;
         gap: 19px;
-        padding: 126px 0 0 35px;
+        padding: 128px 0 0 3px;
         transition: 0.3s all linear;
     }
 
