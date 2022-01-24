@@ -89,11 +89,11 @@ button {
 
 /* Header */
 .header {
-    position: fixed;
+    position: relative;
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 0;
 }
 
 .header:before {
@@ -101,8 +101,6 @@ button {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 20%;
 }
 
 .header-container {
@@ -114,7 +112,7 @@ button {
     align-items: center;
     width: 100%;
     position: relative;
-    z-index: 2;
+    z-index: 0;
 }
 
 .logo {
@@ -139,7 +137,7 @@ button {
     align-items: center;
     gap: 30px;
     position: relative;
-    z-index: 2;
+    z-index: 0;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -179,71 +177,101 @@ button {
     color: #bdae82;
 }
 
+.shadow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
 .header-burger {
     display: none;
     overflow-x: hidden;
+    justify-content: space-between;
+    position: relative;
     right: -60px;
+    width: 50px;
+    height: 28px;
 }
 
 @media (max-width: 768px) {
-    .header-burger {
-        display: block;
-        position: relative;
-        z-index: 3;
-        width: 30px;
-        height: 20px;
+    body.lock {
+        overflow: hidden;
     }
 
-    .header-burger span {
-        position: absolute;
+    .header-burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        user-select: none;
+        z-index: 1;
+    }
+
+    .burger-line {
         z-index: 15;
         right: 0;
-        top: 10px;
+        top: 12px;
+        width: 80%;
         overflow: visible;
         content: '';
-        height: 2px;
+        height: 3px;
         background-color: #fff;
-        width: 100%;
         transition: all 0.3s ease-in-out;
     }
 
-    .header-burger:before,
-    .header-burger:after {
-        content: '';
-        background-color: #fff;
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        z-index: 3;
+    .header-burger:hover {
+        background-color: #bdae82;
     }
-
-    .header-burger:before {
+    
+    .burger-line .line1 {
         top: 0;
     }
 
-    .header-burger::after {
-        bottom: 0;
-    }
-
-    .header-burger.active:before {
+    .burger-line-active .line1 {
         transform: rotate(-45deg) translate(-5px, 6px);
     }
-
-    .header-burger.active:after {
-        transform: rotate(45deg) translate(-5px, -6px);
+    
+    .burger-line .line2 {
+        top: 14px;
+        transform: translateY(-50%);
     }
 
-    .header-burger.active span {
-        opacity: 0;
+    .burger-line.active .line2 {
+        background-color: #000;
+    }
+
+    .burger-line .line3 {
+        top: 25px;
+    }
+    
+    .burger-line.active .line3 {
+        transform:  translate(-12px) rotate(45deg);
+    }
+
+    .header-.burger .burger-line:hover {
+        background-color: #bdae82;
     }
 
     .nav {
         position: fixed;
         top: 0;
         right: -100%;
+        z-index: 10;
         width: 75%;
         height: 100%;
-        background-color: #000;
+        background: #000;
+        overflow: auto;
+        font-size: 35px;
+        line-height: 2;
+        transform: translateX(100%);
+        transition: 0.3s all linear;
     }
 
     .nav.active {
@@ -251,12 +279,18 @@ button {
         right: 0;
     }
 
-    .nav-list {
+    .nav-list-active {
         display: block;
         align-items: left;
         padding: 50px 0 0 60px;
     }
 
+}
+
+@media (max-width: 600px) {
+    .nav {
+        width: 100%;
+    }
 }
 
 /* Main */
