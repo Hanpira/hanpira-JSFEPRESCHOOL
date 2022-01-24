@@ -450,8 +450,8 @@ button {
 @media (max-width: 768px) {
     .skills-items {
         flex-wrap: wrap;
-        gap: 44;
-        padding-top: 30px;
+        gap: 7px;
+        padding-top: 34px;
     }
 }
 
@@ -472,7 +472,7 @@ button {
 
 @media (max-width: 768px) {
     .skill-item {
-        padding: 20px 0;
+        padding: 14px 0;
         line-height: 1.5;
         width: 300px;
     }
@@ -507,6 +507,11 @@ button {
 }
 
 @media (max-width: 768px) {
+    .section-portfolio {
+        padding-top: 82px;
+        padding-bottom: 10px;
+    }
+
     .portfolio-btns {
         flex-wrap: wrap;
         justify-content: center;
@@ -626,7 +631,13 @@ button {
     .price {
         flex-wrap: wrap;
         justify-content: center;
+        gap: 40px;
         width: 420px;
+        padding: 19px 0px;
+    }
+
+    .price-item {
+        padding-bottom: 14px;
     }
 
     .price-item-title {
@@ -714,6 +725,30 @@ textarea:hover {
 @media (max-width: 768px) {
     .section-contact {
         background-size: center 0;
+        margin-top: 60px;
+        padding-top: 30px;
+    }
+
+    .contact-container {
+        margin: 0;
+        width: 450px;
+        padding-bottom: 109px;
+        align-items: center;
+    }
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        box-sizing: border-box;
+        line-height: 2;
+        padding-top: 18px;
+    }
+    .section-title-contact {
+        font-family: "Merriweather";
+        font-size: 32px;
+        line-height: 2;
     }
 }
 
@@ -725,16 +760,6 @@ textarea:hover {
     justify-content: space-between;
     margin: 0 auto;
     padding: 43px 0px 0px 23px;
-}
-
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-        flex-wrap: wrap;
-        padding: 28px 10px 40px 10px;
-    }
-    
 }
 
 .footer-container a {
@@ -794,4 +819,16 @@ textarea:hover {
 
 .social-item:hover {
     filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 28px 10px 40px 10px;
+    }
+    .footer-social {
+        padding-top: 11px;
+    }
 }
