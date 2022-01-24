@@ -350,7 +350,7 @@ button {
     justify-content: center;
     align-items: center;
     font-family: "Merriweather";
-    font-size: 40px;
+    font-size: 32px;
     font-weight: 700;
     color: #bdae82;
     text-align: center;
@@ -404,6 +404,8 @@ button {
 @media (max-width: 768px) {
     .skills-items {
         flex-wrap: wrap;
+        gap: 44;
+        padding-top: 30px;
     
 }
 
@@ -420,6 +422,14 @@ button {
     padding-left: 15px;
     padding-right: 20px;
     line-height: 2;
+}
+
+@media (max-width: 768px) {
+    .skill-item {
+        padding: 20px 0;
+        line-height: 1.5;
+        width: 300px;
+    }
 }
 
 .skill-item-photo:nth-child(1) {
