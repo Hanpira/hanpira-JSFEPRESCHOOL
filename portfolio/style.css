@@ -89,18 +89,7 @@ button {
 
 /* Header */
 .header {
-    position: relative;
     width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 0;
-}
-
-.header:before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
 }
 
 .header-container {
@@ -184,6 +173,7 @@ button {
     display: none;
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
 }
 
 .header-burger {
@@ -217,84 +207,95 @@ button {
         gap: 10px;
         width: 50px;
         height: 50px;
+        position: relative;
+        right: 60px;
         cursor: pointer;
         user-select: none;
-        z-index: 1;
+        z-index: 30;
+
     }
 
-    .burger-line {
+    .line {
         z-index: 15;
         right: 0;
         top: 12px;
         width: 80%;
+        display: block;
         overflow: visible;
         content: '';
         height: 3px;
         background-color: #fff;
         transition: all 0.3s ease-in-out;
     }
-
-    .header-burger:hover {
-        background-color: #bdae82;
-    }
     
-    .burger-line .line1 {
+    .header-burger .line:nth-child(1) {
         top: 0;
     }
-
-    .burger-line-active .line1 {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
     
-    .burger-line .line2 {
+    .header-burger .line:nth-child(2) {
         top: 14px;
-        transform: translateY(-50%);
     }
 
-    .burger-line.active .line2 {
-        background-color: #000;
-    }
-
-    .burger-line .line3 {
+    .header-burger .line:nth-child(3) {
         top: 25px;
     }
+
+    .line-active:nth-child(1) {
+        transform: translate(-5px, 6px); rotate(-45deg);
+    }
     
-    .burger-line.active .line3 {
-        transform:  translate(-12px) rotate(45deg);
+    .line-active:nth-child(2) {
+        opacity: 0;
     }
 
-    .header-burger .burger-line:hover {
+    .line-active:nth-child(3) {
+        transform: translate(-5px, -6px) rotate(-45deg);
+    }
+
+    .header-burger:hover .line {
         background-color: #bdae82;
     }
 
     .nav {
         position: fixed;
         top: 0;
-        right: -100%;
+        overflow: hidden;
+        display: none;
         z-index: 10;
         width: 75%;
         height: 100%;
         background: #000;
-        overflow: auto;
         font-size: 35px;
         line-height: 2;
         transform: translateX(100%);
         transition: 0.3s all linear;
+        margin-left: 0;
+        margin-right: 0px;
     }
 
-    .nav.active {
-        transition: 0.3s;
-        right: 0;
+    .nav-active {
+        transition: 0.3s all linear;
+        right: 75%;
     }
 
-    .nav-list-active {
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 19px;
+        padding: 126px 0 0 35px;
+        transition: 0.3s all linear;
+    }
+
+    .shadow-active {
+        position: fixed;
+        top: 0;
+        left: 0;
         display: block;
-        align-items: left;
-        padding: 50px 0 0 60px;
-    }
-
-    .lang {
-        margin-left: auto;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
     }
 
 }
@@ -558,10 +559,12 @@ button {
 
 @media (max-width: 768px) {
     .video-container {
+        background-image: url(./assets/img/video-tablet-vers.jpg);
         padding: 0;
         margin: 0;
         margin-top: 37px;
-        width: 100%;
+        height: 628px;
+        width: auto;
     }
 }
 
