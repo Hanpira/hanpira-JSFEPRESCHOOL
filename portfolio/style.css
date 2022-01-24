@@ -255,7 +255,7 @@ button {
         transform:  translate(-12px) rotate(45deg);
     }
 
-    .header-.burger .burger-line:hover {
+    .header-burger .burger-line:hover {
         background-color: #bdae82;
     }
 
@@ -295,12 +295,6 @@ button {
 
 /* Main */
 
-@media (max-width: 1440px) {
-    section {
-        width: 100%;
-    }
-}
-
 /* Hero */
 
 .hero {
@@ -337,6 +331,13 @@ button {
 
 /* Section */
 
+
+@media (max-width: 1440px) {
+    section {
+        width: 100%;
+    }
+}
+
 .section-about {
     display: flex;
     flex-direction: column;
@@ -371,6 +372,23 @@ button {
     content: '';
 }
 
+@media screen and (max-width: 768px) {
+    .section__title {
+      font-size: 32px;
+      line-height: 40px;
+    }
+
+    .section-title::before {
+        width: 17%;
+    }
+    
+    .section-title::after {
+        width: 17%;
+        height: 2px;
+        background-color: #bdae82;
+        content: '';
+
+}
 /* Skills */
 
 .skills-items {
@@ -381,6 +399,12 @@ button {
     font-size: 18px;
     padding-top: 37px;
     width: 100%;
+}
+
+@media (max-width: 768px) {
+    .skills-items {
+        flex-wrap: wrap;
+    
 }
 
 .skill-item-title {
@@ -610,6 +634,16 @@ textarea:hover {
     justify-content: space-between;
     margin: 0 auto;
     padding: 43px 0px 0px 23px;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 28px 10px 40px 10px;
+    }
+    
 }
 
 .footer-container a {
