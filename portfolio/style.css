@@ -577,6 +577,18 @@ button {
     margin: 24px 0;
 }
 
+@media (max-width: 768px) {
+    .price {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 420px;
+    }
+
+    .price-item-title {
+        line-height: 2;
+    }
+}
+
 /* Contacts */
 
 .section-contact {
