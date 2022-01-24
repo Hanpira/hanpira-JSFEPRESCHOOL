@@ -379,16 +379,17 @@ button {
     }
 
     .section-title::before {
-        width: 17%;
+        width: 30%;
     }
     
     .section-title::after {
-        width: 17%;
+        width: 30%;
         height: 2px;
         background-color: #bdae82;
         content: '';
 
 }
+
 /* Skills */
 
 .skills-items {
@@ -406,7 +407,7 @@ button {
         flex-wrap: wrap;
         gap: 44;
         padding-top: 30px;
-    
+    }
 }
 
 .skill-item-title {
@@ -458,6 +459,13 @@ button {
     display: flex;
     padding: 38px;
     gap: 5px;
+}
+
+@media (max-width: 768px) {
+    .portfolio-btns {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
 .period-btn {
