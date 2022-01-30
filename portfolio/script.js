@@ -1,25 +1,18 @@
-const burger = document.querySelector('.header-burger');
-const burgerLine = document.querySelectorAll('.line')
-const menu = document.querySelector('.nav');
-const item = document.querySelectorAll('.nav-item');
-const shadow = document.querySelector('.shadow');
+// Hamburger
+const hamburger = document.querySelector(".hamburger");
+const navList = document.querySelector(".nav-list");
+const navLinks = document.querySelectorAll(".nav-link");
 
+const toggleMenu = () => {
+  hamburger.classList.toggle("open");
+  navList.classList.toggle("open");
+};
 
-(function () {
-	burger.addEventListener('click', (() => {
-		menu.classList.toggle('nav-active')
-		burgerLine.forEach((line) => { line.classList.toggle('.line-active') })
-		shadow.classList.toggle('shadow-active')
-	}));
-}());
+const closeMenu = () => {
+  hamburger.classList.remove("open");
+  navList.classList.remove("open");
+};
 
+hamburger.addEventListener("click", toggleMenu);
 
-(function () {
-	item.forEach((li) => {
-		li.addEventListener('click', (() => {
-			menu.classList.toggle('nav-active')
-			burgerLine.forEach((line) => { line.classList.toggle('.line-active') })
-			shadow.classList.toggle('shadow-active')
-		}))
-	})
-}());
+navLinks.forEach((el) => el.addEventListener("click", closeMenu));
