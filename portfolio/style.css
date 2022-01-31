@@ -529,11 +529,6 @@ button {
     color: #fff;
 }
 
-.active-btn {
-    color: #000;
-    background-color: #bdae82;
-}
-
 .portfolio-container {
     display: flex;
     justify-content: center;
@@ -843,4 +838,10 @@ textarea:hover {
     .footer-social {
         padding-top: 11px;
     }
+}
+
+/* active buttons*/
+.active {
+    color: #000;
+    background-color: #bdae82;
 }
