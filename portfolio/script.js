@@ -45,7 +45,7 @@ const changeImage = (event) => /* change images and season */
 portfolioImages.forEach ((img, index) => img.src = `./assets/img/${event.target.dataset.season}/${index+1}.jpg`);
 
 const changeActive = (event) => /* change button from active to inactive and vice versa */ {
-  portfolioBtns.forEach((el) => el.classList.remove('active'));
+  portfolioBtn.forEach((el) => el.classList.remove('active'));
   event.target.classList.add('active');
 }
 
