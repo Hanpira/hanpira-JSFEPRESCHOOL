@@ -316,9 +316,9 @@ button {
     background-image: url('./assets/img/hero-photo.jpg');
     background-position: center -90px;
     background-repeat: no-repeat;
-    background-size: cover;
-    margin: 0 auto;
-    padding: 10px 20px 330px 20px;
+    height: 820px;
+    display: flex;
+    align-items: center;
 }
 
 .hero-container {
@@ -347,12 +347,8 @@ button {
 
 @media (max-width: 768px) {
     .hero {
+        height: 500px;
         background-image: url('./assets/img/hero-tablet-vers.jpg');
-        background-position: center -90px;
-        background-repeat: no-repeat;
-        background-size: cover;
-        margin: 0;
-        padding: 10px 0 160px 0;
     }
 
     .hero-container {
@@ -360,7 +356,7 @@ button {
         flex-direction: column;
         justify-content: center;
         width: 100%;
-        padding-left: 0px;
+        padding-left: 60px;
         padding-top: 54px;
     }
 
@@ -552,6 +548,7 @@ button {
 .video-container {
     padding: 60px 20px 0 20px;
     height: 765px;
+    width: 100%;
     position: relative;
     display: flex;
     justify-content: center;
@@ -575,9 +572,9 @@ button {
   
 @media (max-width: 768px) {
     .video-container {
+        height: 484px;
         background-image: url("./assets/img/video-player-tablet.jpg");
         background-size: 768px 418px;
-        background-repeat: no-repeat;
     }
   
     .video-btn {
