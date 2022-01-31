@@ -16,3 +16,5 @@ const closeMenu = () => {
 hamburger.addEventListener("click", toggleMenu);
 
 navLinks.forEach((el) => el.addEventListener("click", closeMenu));
+
+// Portfolio section - changing season button 
