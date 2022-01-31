@@ -1,4 +1,4 @@
-let state = { lang: "en", theme: "dark" }; /* Autochoise: you can switch to russian lang or choose light theme*/
+let firstVisit = { lang: "en", theme: "dark" }; /* Autochoise: you can switch to russian lang or choose light theme*/
 
 // Hamburger
 const hamburger = document.querySelector(".hamburger");
@@ -76,21 +76,21 @@ import i18Obj from "./translate.js";
 const switchLng = document.querySelector(".lng");
 const switchLngBtns = document.querySelectorAll(".lng-btn");
 
-const onLngBtnClick = (event) => {
+const lngBtnClick = (event) => {
   if (event.target.classList.contains("lng-btn")) {
-    state.lang = event.target.dataset.lng;
-    updateClasses();
+    firstVisit.lang = event.target.dataset.lng;
+    translateClasses();
   }
 };
 
-const updateClasses = () => {
+const translateClasses = () => {
   changeClassLngActive();
-  getTranslate(state.lang);
+  getTranslate(firstVisit.lang);
 };
 
 const changeClassLngActive = () => {
   switchLngBtns.forEach((el) => el.classList.remove("lng-active"));
-  const activeBtn = document.querySelector(`[data-lng=${state.lang}]`);
+  const activeBtn = document.querySelector(`[data-lng=${firstVisit.lang}]`);
   activeBtn.classList.add("lng-active");
 };
 
@@ -107,5 +107,53 @@ const getTranslate = (currentLanguage) => {
   });
 };
 
-switchLng.addEventListener("click", onLngBtnClick);
+switchLng.addEventListener("click", lngBtnClick);
 
+
+/* Switching themes */
+
+const themeBtn = document.querySelector(".theme-btn");
+const sectionTitle = document.querySelectorAll(".section-title");
+const text = document.querySelectorAll(".text-el");
+const openSidebar = document.querySelectorAll(".sidebar");
+
+const ThemeBtnClick = () => {
+  firstVisit.theme = firstVisit.theme === "light" ? "dark" : "light";
+  switchTheme();
+};
+
+const switchTheme = () => {
+  if (
+    firstVisit.theme === "light" &&
+    !themeBtn.classList.contains("light-theme-btn")
+  ) {
+    themeBtn.classList.add("light-theme-btn");
+    text.forEach((el) => el.classList.add("light-theme"));
+    openSidebar.forEach((el) => el.classList.add("light-theme-sidebar"));
+  } else if (
+    firstVisit.theme === "dark" &&
+    themeBtn.classList.contains("light-theme-btn")
+  ) {
+    themeBtn.classList.remove("light-theme-btn");
+    text.forEach((el) => el.classList.remove("light-theme"));
+    openSidebar.forEach((el) => el.classList.remove("light-theme-sidebar"));
+  }
+};
+
+themeBtn.addEventListener("click", ThemeBtnClick);
+
+/* Local storage*/
+
+function setLocalStorage() {
+  localStorage.setItem('firstVisit', firstVisit);
+}
+window.addEventListener('beforeunload', setLocalStorage)
+
+function getLocalStorage() {
+  if(localStorage.getItem('firstvisit')) {
+    firstVisit = localStorage.getItem('firstVisit');
+    translateClasses();
+    switchTheme();
+  }
+}
+window.addEventListener('load', getLocalStorage)
