@@ -152,18 +152,18 @@ button {
     color: var(--color-gold);
   }
   
-  .switch-lng {
+  .lng {
     display: flex;
     align-items: center;
     width: 70px;
   }
   
-  .switch-lng-el {
+  .lng-el {
     line-height: 50px;
     font-weight: 700;
   }
   
-  .switch-lng-btn {
+  .lng-btn {
     border: 0;
     padding: 0;
     background-color: transparent;
@@ -171,7 +171,7 @@ button {
     transition: 0.3s;
   }
   
-  .switch-lng-btn:hover {
+  .lng-btn:hover {
     color: var(--color-gold);
   }
   
@@ -179,7 +179,7 @@ button {
     color: var(--color-gold);
   }
   
-  .switch-lng-slash {
+  .lng-slash {
     padding: 0 8px 0 9px;
   }
   
@@ -844,4 +844,48 @@ textarea:hover {
 .active {
     color: #000;
     background-color: #bdae82;
+}
+
+.active:hover, .active:focus{
+    box-shadow: inset -7em 0 0 0 #ffdc7f, inset 7em 0 0 0 #ffdc7f;
+}
+
+/* Animation buttons*/
+.btn-diagonal {
+    background-color: #000;
+    color: #bdae82;
+    
+    &:before,
+    &:after {
+      content: '';
+      @include absolute(0,0,0,0);
+    }
+  
+    &:before {
+      right: -50px;
+      border-right: 50px solid transparent;
+      border-bottom: solid;
+      transform: translateX(-100%);
+    }
+    
+    &:after {
+      left: -50px;
+      border-left: 50px solid transparent;
+      border-top: solid;
+      transform: translateX(100%);
+    }
+  
+    &:hover {
+      color: tint(#000);
+  
+      &:before { transform: translateX(-49%); }
+      &:after { transform: translateX(49%); }
+    }
+}
+
+/* ordering */
+.raise:hover, .raise:focus{
+	box-shadow: 0 0.5em 0.5em -0.4em #ffa260;
+	transform: translatey(-0.65em);
+    color: #000;
 }
