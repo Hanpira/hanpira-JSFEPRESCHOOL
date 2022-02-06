@@ -1,4 +1,4 @@
-let firstVisit = { lang: 'en', theme: 'light' }; /* Autochoise: you can switch to russian lang or choose light theme*/
+let firstVisit = { lang: 'en', theme: 'dark' }; /* Autochoise: you can switch to russian lang or choose light theme*/
 
 // Hamburger
 const hamburger = document.querySelector('.hamburger');
@@ -150,7 +150,7 @@ function setLocalStorage() {
 window.addEventListener('beforeunload', setLocalStorage)
 
 function getLocalStorage() {
-  if(localStorage.getItem('firstvisit')) {
+  if(localStorage.getItem('firstVisit')) {
     firstVisit = localStorage.getItem('firstVisit');
     translateClasses();
     switchTheme();
