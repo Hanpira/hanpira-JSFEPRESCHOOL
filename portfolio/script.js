@@ -150,7 +150,7 @@ function setLocalStorage() {
 window.addEventListener('beforeunload', setLocalStorage)
 
 function getLocalStorage() {
-  if(localStorage.getItem('firstvisit')) {
+  if(localStorage.getItem('firstVisit')) {
     firstVisit = localStorage.getItem('firstVisit');
     translateClasses();
     switchTheme();
