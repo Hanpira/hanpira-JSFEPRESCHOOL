@@ -1,4 +1,4 @@
-let firstVisit = { lang: 'en', theme: 'dark' }; /* Autochoise: you can switch to russian lang or choose light theme*/
+let start = { lang: 'en', theme: 'dark'}; /* Autochoice: you can switch to russian lang or choose light theme*/
 
 // Hamburger
 const hamburger = document.querySelector('.hamburger');
@@ -78,19 +78,19 @@ const switchLngBtns = document.querySelectorAll('.lng-btn');
 
 const lngBtnClick = (event) => {
   if (event.target.classList.contains('lng-btn')) {
-    firstVisit.lang = event.target.dataset.lng;
+    start.lang = event.target.dataset.lng;
     translateClasses();
   }
 };
 
 const translateClasses = () => {
-  changeClassLngActive();
-  getTranslate(firstVisit.lang);
+  changeLngActive();
+  getTranslate(start.lang);
 };
 
-const changeClassLngActive = () => {
+const changeLngActive = () => {
   switchLngBtns.forEach((el) => el.classList.remove('lng-active'));
-  const activeBtn = document.querySelector(`[data-lng=${firstVisit.lang}]`);
+  const activeBtn = document.querySelector(`[data-lng=${start.lang}]`);
   activeBtn.classList.add('lng-active');
 };
 
@@ -109,29 +109,27 @@ const getTranslate = (currentLanguage) => {
 
 switchLng.addEventListener('click', lngBtnClick);
 
-
 /* Switching themes */
 
 const themeBtn = document.querySelector('.theme-btn');
-const sectionTitle = document.querySelectorAll('.section-title');
 const text = document.querySelectorAll('.text-el');
 const openSidebar = document.querySelectorAll('.sidebar');
 
 const ThemeBtnClick = () => {
-  firstVisit.theme = firstVisit.theme === 'light' ? 'dark' : 'light';
+  start.theme = start.theme == 'light' ? 'dark' : 'light';
   switchTheme();
 };
 
 const switchTheme = () => {
   if (
-    firstVisit.theme === 'light' &&
+    start.theme === 'light' &&
     !themeBtn.classList.contains('light-theme-btn')
   ) {
     themeBtn.classList.add('light-theme-btn');
     text.forEach((el) => el.classList.add('light-theme'));
     openSidebar.forEach((el) => el.classList.add('light-theme-sidebar'));
   } else if (
-    firstVisit.theme === 'dark' &&
+    start.theme === 'dark' &&
     themeBtn.classList.contains('light-theme-btn')
   ) {
     themeBtn.classList.remove('light-theme-btn');
@@ -144,16 +142,22 @@ themeBtn.addEventListener('click', ThemeBtnClick);
 
 /* Local storage*/
 
-function setLocalStorage() {
-  localStorage.setItem('firstVisit', firstVisit);
-}
-window.addEventListener('beforeunload', setLocalStorage)
-
 function getLocalStorage() {
-  if(localStorage.getItem('firstVisit')) {
-    firstVisit = localStorage.getItem('firstVisit');
-    translateClasses();
-    switchTheme();
+  if(localStorage.getItem('theme')) {
+    const theme = localStorage.getItem('theme');
+    switchTheme(theme);
+  }
+  if(localStorage.getItem('lang')){
+    const lang = localStorage.getItem('lang');
+    translateClasses(lang);
   }
 }
-window.addEventListener('load', getLocalStorage)
+
+window.addEventListener('load', getLocalStorage);
+
+function setLocalStorage() {
+  localStorage.setItem('theme', theme);
+  localStorage.setItem('lang', lang);
+}
+
+window.addEventListener('beforeunload', setLocalStorage);
