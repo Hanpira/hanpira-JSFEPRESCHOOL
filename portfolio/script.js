@@ -1,4 +1,4 @@
-let firstVisit = { lang: 'en', theme: 'light' }; /* Autochoise: you can switch to russian lang or choose light theme*/
+let firstVisit = { lang: 'en', theme: 'dark' }; /* Autochoice: you can switch to russian lang or choose light theme*/
 
 // Hamburger
 const hamburger = document.querySelector('.hamburger');
