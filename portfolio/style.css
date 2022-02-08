@@ -794,6 +794,21 @@ textarea:hover {
     gap: 12px;
 }
 
+.footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20%;
+}
+
+.footer-logo-item {
+    background-color: #bdae82;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: 0.3s;
+    width: 100px;
+}
+
 .footer-social {
     display: flex;
     justify-content: space-between;
@@ -808,6 +823,8 @@ textarea:hover {
     padding-right: 25px;
 }
 
+
+
 .social-item {
     background-position: 50%;
     background-size: contain;
@@ -816,6 +833,8 @@ textarea:hover {
     width: 32px;
     height: 32px;
 }
+
+
 
 .social-item-insta {
     background-image: url('./assets/svg/instagram.svg');
