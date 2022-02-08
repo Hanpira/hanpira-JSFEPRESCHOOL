@@ -552,7 +552,6 @@ button a:hover{
 
 .video-container {
     padding: 0 20px;
-    width: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -578,10 +577,11 @@ button a:hover{
     border-radius: 0 0 30px 30px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 20px 40px;
     margin-top: -8px;
     height: 80px;
+    width: 100%;
 }
 
 .controls-play {
@@ -619,30 +619,79 @@ button a:hover{
 
 .controls-progress {
     display: flex;
-    width: 80%;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
     margin: 0 30px;
 }
 
-.progress{
-    background-color: #000000;
-    border: solid 2px #82CFD0;
+input[type="range"] {
+    -webkit-appearance: none;
+    background: transparent;
+    margin: 0;
+    width: 75%;
+    padding: 0 10px;
+}
+
+input[type="range"]:focus {
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background: #000;
     border-radius: 8px;
     height: 20px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 22px;
+    width: 10px;
+    background: #bdae82;
+    border: solid 1px #000000;
+    cursor: pointer;
+}
+
+.progress{
+    background: #000000;
+    border: none;
 }
 
 .controls-time {
     font-size: 24px;
     color: #fff;
-    margin-left: 50px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 15%;
 }
 
 .volume-btn {
     background-image: url('./assets/svg/volume.svg');
+    display: flex;
+    height: 20px;
 }
-  
+
+.volume-btn.mute {
+    background-image: url('./assets/svg/mute.svg');
+}
+
+.controls-volume {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 20px;
+    transition: 0.3s;  
+    background: #000000;
+    cursor: pointer;
+    width: 70px;
+}
+
 .video-btn {
-    border: 0;
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-image: url("./assets/svg/play-hover.svg");
     background-repeat: no-repeat;
     background-color: transparent;

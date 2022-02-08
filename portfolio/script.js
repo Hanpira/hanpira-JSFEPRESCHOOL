@@ -171,11 +171,8 @@ const stopBtn = document.querySelector('.controls-stop');
 const playBtnImg = document.querySelector('.play-btn');
 const progress = document.querySelector('.progress');
 const time = document.querySelector('.controls-time');
-
-
-const volumeBtn = document.querySelectorAll('.controls-volume');
-  
 const mainBtn = document.querySelector('.video-btn');
+const volumeBtn = document.querySelectorAll('.volume-btn');
 
 //play video
 
@@ -228,3 +225,27 @@ progress.addEventListener('input', function() {
   const value = this.value;
   this.style.background = `linear-gradient(to right, #82CFD0 0%, #82CFD0 ${value}%, #fff ${value}%, white 100%)`
 })
+
+// Volume settings
+
+function setVolume() {
+  volumeBtn.classList.toggle('mute');
+  if (volumeBtn.classList.contains('mute')) {
+    video.volume = '0';
+  } else {
+    video.volume = volume.value;
+  }
+}
+
+volumeBtn.addEventListener('click', setVolume);
+
+function changeVolume () {
+  video.volume = volume.value;
+  const volumeFirst = (volume.value / 1) * 100;
+  if (volume.value == 0) {
+    volumeBtn.classList.add('mute');
+  } else {
+    volumeBtn.classList.remove('mute');
+  }
+}
+volume.addEventListener('change', changeVolume);
