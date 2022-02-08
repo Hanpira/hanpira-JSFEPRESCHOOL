@@ -173,21 +173,27 @@ const progress = document.querySelector('.progress');
 const time = document.querySelector('.controls-time');
 
 
+const volumeBtn = document.querySelectorAll('.controls-volume');
+  
+const mainBtn = document.querySelector('.video-btn');
 
 //play video
 
 function videoStatus() {
     if (video.paused) {
         video.play();
-        playBtnImg.src = './assets/svg/pause.svg';
+        playBtnImg.classList.toggle('paused');
+        mainBtn.classList.toggle('paused');
     } else {
         video.pause()
-        playBtnImg.src = './assets/svg/play.svg';
+        playBtnImg.classList.toggle('paused');
+        mainBtn.classList.toggle('paused');
     }
 }
 
 playBtn.addEventListener('click', videoStatus);
 video.addEventListener('click', videoStatus);
+mainBtn.addEventListener('click', videoStatus);
 
 // stop video
 

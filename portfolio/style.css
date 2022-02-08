@@ -558,7 +558,7 @@ button a:hover{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 90px 0px 15px 0px;
+    margin: 70px 0px 15px 0px;
     aspect-ratio: 16 / 9;
     gap: 20px;
 }
@@ -609,7 +609,7 @@ button a:hover{
     background-image: url('./assets/svg/play.svg');
 }
 
-.play-btn pause {
+.play-btn.paused {
     background-image: url('./assets/svg/pause.svg');
 }
 
@@ -630,7 +630,6 @@ button a:hover{
     height: 20px;
 }
 
-
 .controls-time {
     font-size: 24px;
     color: #fff;
@@ -646,9 +645,24 @@ button a:hover{
     position: absolute;
     background-image: url("./assets/svg/play-hover.svg");
     background-repeat: no-repeat;
-    width: 129.86px;
-    height: 130px;
     background-color: transparent;
+    transition: 0.3s;
+    height: 130px;
+    width: 130px;
+    left: 50%;
+    top: 50%;
+    margin-left: -65px;
+    margin-top: -25px;
+    z-index: 1;
+    border: 0;
+    transition: none;
+}
+
+.video-btn.paused {
+    background: url('./assets/svg/bc-pause.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0;
     transition: 0.3s;
 }
   
