@@ -161,3 +161,64 @@ function setLocalStorage() {
 }
 
 window.addEventListener('beforeunload', setLocalStorage);
+
+
+//Video settings
+
+const video = document.querySelector('.video-item');
+const playBtn = document.querySelector('.controls-play');
+const stopBtn = document.querySelector('.controls-stop');
+const playBtnImg = document.querySelector('.play-btn');
+const progress = document.querySelector('.progress');
+const time = document.querySelector('.controls-time');
+
+
+
+//play video
+
+function videoStatus() {
+    if (video.paused) {
+        video.play();
+        playBtnImg.src = './assets/svg/pause.svg';
+    } else {
+        video.pause()
+        playBtnImg.src = './assets/svg/play.svg';
+    }
+}
+
+playBtn.addEventListener('click', videoStatus);
+video.addEventListener('click', videoStatus);
+
+// stop video
+
+function stopVideo() {
+    video.currentTime = 0;
+    video.pause();
+}
+
+stopBtn.addEventListener('click', stopVideo);
+
+// Timer
+
+function videoTime () {
+    progress.value = (video.currentTime / video.duration)*100;
+
+    //time
+    let min = Math.floor(video.currentTime / 60);
+    if (min < 10) {
+        min = '0' + String(min);
+    }
+    let sec = Math.floor(video.currentTime % 60);
+    if (sec < 10) {
+        sec = '0' + String(sec);
+    }
+    time.innerHTML = `${min}:${sec}`;
+}
+
+video.addEventListener('timeupdate', videoTime);
+
+// progress video
+progress.addEventListener('input', function() {
+  const value = this.value;
+  this.style.background = `linear-gradient(to right, #82CFD0 0%, #82CFD0 ${value}%, #fff ${value}%, white 100%)`
+})
