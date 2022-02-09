@@ -574,23 +574,51 @@ button a:hover{
     border-radius: 10px;
 }
 
+/*Video control */
 .controls {
-    display: flex;
+    display: flex;    
     position:absolute;
     bottom: 0;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     transform: translateY(100%) translateX(-5px);
+    flex-wrap: wrap;
     background-color: #bdae82;
+    opacity: 0.9;
     border-radius: 0 0 10px 10px;
-    padding: 20px 40px;
-    margin-top: -8px;
-    height: 80px;
+    padding: 0;
+    height: 60px;
     width: 100%;
+    transition: 0.5s;
 }
 
 .videoplayer:hover .controls {
     transform: translateY(0);
+}
+
+/* Progress bar*/
+
+.progress{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 5px;
+    transition: 0.3s;
+    background: #000000;
+    cursor: pointer;
+}
+
+.progress-filled {
+    background: #bdae82;
+    width: 0;
+}
+
+/* Control buttons*/
+.progress-btn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0;
 }
 
 .controls-play {
@@ -626,13 +654,19 @@ button a:hover{
     background-image: url('./assets/svg/stop.svg');
 }
 
-.controls-progress {
+/*Timer*/
+
+.controls-time {
+    font-size: 24px;
+    color: #fff;
     display: flex;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-    margin: 0 30px;
+    justify-content: center;
+    text-align: center;
+    width: 15%;
+    margin-left: 15px;
 }
+
+/*Volume style settings*/
 
 input[type="range"] {
     -webkit-appearance: none;
@@ -661,19 +695,6 @@ input[type="range"]::-webkit-slider-thumb {
     cursor: pointer;
 }
 
-.progress{
-    border: none;
-}
-
-.controls-time {
-    font-size: 24px;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    width: 15%;
-}
-
 .volume-btn {
     background-image: url('./assets/svg/volume.svg');
     display: flex;
@@ -694,6 +715,8 @@ input[type="range"]::-webkit-slider-thumb {
     cursor: pointer;
     width: 70px;
 }
+
+/*Cental video button*/
 
 .video-btn {
     position: absolute;
