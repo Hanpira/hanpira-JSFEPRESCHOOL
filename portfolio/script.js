@@ -173,6 +173,7 @@ const progress = document.querySelector('.progress');
 const time = document.querySelector('.controls-time');
 const mainBtn = document.querySelector('.video-btn');
 const volumeBtn = document.querySelectorAll('.volume-btn');
+const progressBar = document.querySelector('.progress-filled');
 
 //play video
 
@@ -204,7 +205,7 @@ stopBtn.addEventListener('click', stopVideo);
 // Timer
 
 function videoTime () {
-    progress.value = (video.currentTime / video.duration)*100;
+    progress.value = (video.currentTime / video.duration) * 100;
 
     //time
     let min = Math.floor(video.currentTime / 60);
@@ -219,12 +220,10 @@ function videoTime () {
 }
 
 video.addEventListener('timeupdate', videoTime);
+// current time, duration
 
-// progress video
-progress.addEventListener('input', function() {
-  const value = this.value;
-  this.style.background = `linear-gradient(to right, #82CFD0 0%, #82CFD0 ${value}%, #fff ${value}%, white 100%)`
-})
+
+
 
 // Volume settings
 
@@ -249,3 +248,10 @@ function changeVolume () {
   }
 }
 volume.addEventListener('change', changeVolume);
+
+// Progress Bar
+
+video.addEventListener('timeupdate', () => {
+  const changeColorProgress = (video.currentTime /video.duration) * 100;
+  progressBar.style.width = `${changeColorProgress}%`;
+})
