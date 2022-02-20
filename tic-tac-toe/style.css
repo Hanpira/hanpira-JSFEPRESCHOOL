@@ -1,5 +1,6 @@
 html {
     scroll-behavior: smooth;
+    height: 100%;
 }
 
 * {
@@ -63,18 +64,25 @@ body {
     }
 }
 
+.header {
+    height: 60px;
+}
+
 .header-text {
     font-family: 700;
     padding: 20px;
 }
 
+.main {
+    height: calc(100% - 60px - 60px);
+}
 
 /* Footer */
 
 .footer {
     display: flex;
     justify-content: flex-end;
-    height: 50px;
+    height: 60px;
 }
 
 .footer-container {
