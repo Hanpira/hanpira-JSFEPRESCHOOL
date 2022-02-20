@@ -1,0 +1,47 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Merriweather;
+    src: url("./assets/fonts/Merriweather-Bold.ttf");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: Merriweather;
+    src: url("./assets/fonts/Merriweather-Regular.ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("./assets/fonts/Roboto-Regular.ttf");
+    font-weight: 400;
+}
+
+body {
+    background: linear-gradient(45deg, #EECFBA, #C5DDE8);
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Merriweather;
+    font-weight: 400;
+    font-size: 30px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-text {
+    font-family: 700;
+    color: #043a53;
+    padding: 20px;
+}
