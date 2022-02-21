@@ -35,7 +35,8 @@ const check = () => {
             boxes[arr[i][0]].innerHTML == '0' && boxes[arr[i][1]].innerHTML == '0' && boxes[arr[i][2]].innerHTML == '0') {
                 result = 'Player 2';
                 checkResult(result);
-    /*    } else if () {
+            }
+    /*     else if () {
             result = 'Friendship';
             checkResult(result);
             } */
